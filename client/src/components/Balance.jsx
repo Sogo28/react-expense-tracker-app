@@ -1,6 +1,7 @@
 import React from "react";
 import { GlobalContext } from "../context/GlobalState";
 import { useContext } from "react";
+import { formatNumbers } from "../utils/formatNumbers";
 
 export default function Balance() {
   const { transactions } = useContext(GlobalContext);
@@ -12,7 +13,7 @@ export default function Balance() {
     <>
       <div className="w-full">
         <h2 className="text-xl font-medium uppercase">Your Balance</h2>
-        <h3 className="text-4xl font-bold">${amount}</h3>
+        <h3 className="text-4xl font-bold">${formatNumbers(amount)}</h3>
       </div>
     </>
   );
